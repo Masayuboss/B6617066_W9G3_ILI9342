@@ -222,8 +222,8 @@ void setup()
     lv_obj_add_event_cb(objects.home_bt, switch_event, LV_EVENT_CLICKED, NULL);
     lv_obj_add_event_cb(objects.onmotor_bt, led_event, LV_EVENT_CLICKED, pLED1);
     lv_obj_add_event_cb(objects.offmotor_bt, led_event, LV_EVENT_CLICKED, pLED1);
-    lv_obj_add_event_cb(objects.incrementpwm, valuechange_event, LV_EVENT_CLICKED, NULL);
-    lv_obj_add_event_cb(objects.decrementpwm, valuechange_event, LV_EVENT_CLICKED, NULL);
+    lv_obj_add_event_cb(objects.incrementpwm, valuechange_event, LV_EVENT_PRESSED, NULL);
+    lv_obj_add_event_cb(objects.decrementpwm, valuechange_event, LV_EVENT_RELEASED, NULL);
     lv_obj_add_event_cb(objects.onpwm_sw, get_value, LV_EVENT_VALUE_CHANGED, NULL);
     lv_timer_create(get_sw_state, 200, pSW1);
   }

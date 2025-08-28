@@ -76,11 +76,11 @@ void valuechange_event(lv_event_t *e)
     lv_event_code_t code = lv_event_get_code(e);
     lv_obj_t *obj = lv_event_get_target(e);
     int val = lv_spinbox_get_value(objects.pwmval);
-    if (obj == objects.decrementpwm && code == LV_EVENT_CLICKED && val > 0)
+    if (obj == objects.decrementpwm && code == LV_EVENT_PRESSED && val > 0)
     {
         lv_spinbox_set_value(objects.pwmval, val - 1);
     }
-    else if (obj == objects.incrementpwm && code == LV_EVENT_CLICKED && val < 255)
+    else if (obj == objects.incrementpwm && code == LV_EVENT_RELEASED && val < 255)
     {
         lv_spinbox_set_value(objects.pwmval, val + 1);
     }
